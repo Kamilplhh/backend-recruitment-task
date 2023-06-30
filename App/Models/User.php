@@ -1,18 +1,62 @@
 <?php
 class User
 {
-    private $usersTable;
+    protected $id;
+    protected $name;
+    protected $username;
+    protected $email;
+    protected $address;
+    protected $phone;
+    protected $company;
 
-    public function __construct()
+    public function __construct($id, $name, $username, $email, $address, $phone, $company)
     {
-        $this->usersTable = './dataset/users.json';
+        $this->id = $id;
+        $this->name = $name;
+        $this->username = $username;
+        $this->email = $email;
+        $this->address = $address;
+        $this->phone = $phone;
+        $this->company = $company;
     }
 
-    public function GetAllUsers()
+    //Get Methods
+    public function getId()
     {
-        $json_data = file_get_contents($this->usersTable);
-        $data = json_decode($json_data, true);
-
-        return $data;
+        return $this->id;
     }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+    
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getAddress()
+    {
+        return $this->address['street'] . ', ' .  $this->address['zipcode'] . ' ' . $this->address['city'];
+    }
+
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    public function getCompany()
+    {
+        return $this->company['name'];
+    }
+
+    //Add method
+
+    //Delete method
 }
