@@ -1,12 +1,12 @@
 /*Add your custom styles here*/
 html {
     font-size: 10px;
+    background-color: rgb(208, 208, 211);
 }
 
-table,
 td,
 th {
-    border: 1px solid;
+    border-bottom: 1px solid;
 }
 
 table {
@@ -14,6 +14,42 @@ table {
     border-collapse: collapse;
 }
 
-.starting-title {
-    text-align: center;
+tr:nth-child(even) {
+    background-color: #acaaaa !important;
+}
+
+tr:hover,
+tr:nth-child(even):hover {
+    background-color: rgb(202, 202, 193) !important;
+}
+
+.header {
+    background-color: #838282;
+}
+
+.header:hover {
+    background-color: #838282 !important;
+}
+
+button {
+    font-size: 10px;
+    transition: .3s ease;
+    cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 2px;
+    border: 0px;
+}
+
+button:hover {
+    background-color: bisque;
+}
+
+.remove:hover {
+    background-color: rgb(190, 87, 87);
+}
+
+@media only screen and (max-width: 700px) {
+    html, button {
+        font-size: 7px !important;
+    }
 }

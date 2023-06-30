@@ -6,7 +6,7 @@ $DataRows = $UsersC->GetData();
 
 
 echo '<table>
-    <tr>
+    <tr class="header">
         <th>Name</th>
         <th>Username</th>
         <th>Email</th>
@@ -24,11 +24,11 @@ foreach($DataRows as $row){
         <th>" . $row->getAddress() . "</th>
         <th>" . $row->getPhone() . "</th>
         <th>" . $row->getCompany() . "</th>
-        <th> <button value=". $row->getId() .">Remove</button> </th>
+        <th> <button value class='remove' =". $row->getId() .">Remove</button> </th>
         </tr>";
 }
 echo '</table>';
 ?>
 <button>Previous page</button>
 <button>Next page</button>
-<button>ADD</button>
+<button>Add</button>
