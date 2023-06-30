@@ -1,6 +1,10 @@
 <?php
 
-// Please add your logic here
+require_once './App/Controllers/UserController.php';
 
-echo "<h1 class='starting-title'>Nice to see you! &#128075;</h1>";
+$UsersC = new UsersContoller();
+
+echo $UsersC->GetData();
+
+
 

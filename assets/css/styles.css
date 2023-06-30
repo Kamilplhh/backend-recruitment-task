@@ -1,4 +1,12 @@
 /*Add your custom styles here*/
+html {
+    font-size: 10px;
+}
+
+table {
+    border: 1px solid black;
+}
+
 .starting-title {
     text-align: center;
 }
