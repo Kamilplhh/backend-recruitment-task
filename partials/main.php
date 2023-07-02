@@ -1,10 +1,11 @@
 <?php
 require_once "UserController.php";
 
-$UsersC = new UserContoller();
-$DataRows = $UsersC->GetData();
+$Controller = new UserController();
+$DataRows = $Controller->GetData();
 
-echo '<table>
+if (!empty($DataRows)) {
+    echo '<table id="table">
     <tr class="header">
         <th>Name</th>
         <th>Username</th>
@@ -15,8 +16,8 @@ echo '<table>
         <th></th>
     </tr>';
 
-foreach ($DataRows as $row) {
-    echo "<tr>
+    foreach ($DataRows as $row) {
+        echo "<tr>
         <th>" . $row->getName() . "</th>
         <th>" . $row->getUsername() . "</th>
         <th>" . $row->getEmail() . "</th>
@@ -25,7 +26,22 @@ foreach ($DataRows as $row) {
         <th>" . $row->getCompany() . "</th>
         <th> <button class='remove' value=" . $row->getId() . ">Remove</button> </th>
         </tr>";
+    }
+    echo '</table>';
+} else {
+    echo '<center><h1> Users.json is empty </h1></center>';
 }
-echo '</table>';
 ?>
-<button>Add</button>
+<form method="POST" action="UserController.php?action=addUser">
+    <input type="hidden" name="id" id="id" />
+    <input name="name" placeholder="Name" required></input>
+    <input name="username" placeholder="Username" required></input>
+    <input name="email" placeholder="Email" required></input>
+    <input name="street" placeholder="Street" required></input>
+    <input name="zipcode" placeholder="Zipcode" required></input>
+    <input name="city" placeholder="City" required></input>
+    <input name="phone" placeholder="Phone" required></input>
+    <input name="companyName" placeholder="CompanyName" required></input>
+
+    <button id="add" type="submit">Add</button>
+</form>
