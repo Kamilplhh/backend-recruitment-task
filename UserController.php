@@ -72,7 +72,7 @@ class UserController
         $newJsonFile = json_encode(array_values($result), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         file_put_contents($this->usersTable, $newJsonFile);
 
-        header('Location: ./index.php');
+        header('Refresh:0, ./index.php');
     }
 }
 
@@ -88,6 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $Controller->AddUser();
         }
     } else {
-        echo 'Error with request';
+        echo 'Problem with request';
     }
 }

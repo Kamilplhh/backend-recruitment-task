@@ -32,7 +32,7 @@ if (!empty($DataRows)) {
     echo '<center><h1> Users.json is empty </h1></center>';
 }
 ?>
-<form method="POST" action="UserController.php?action=addUser">
+<form method="POST" action="UserController.php?action=addUser" autocomplete="off">
     <input type="hidden" name="id" id="id" />
     <input name="name" placeholder="Name" required></input>
     <input name="username" placeholder="Username" required></input>
