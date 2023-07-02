@@ -1,6 +1,6 @@
 /*Add your custom styles here*/
 html {
-    font-size: 10px;
+    font-size: 14px;
     background-color: rgb(208, 208, 211);
 }
 
@@ -48,8 +48,8 @@ button:hover {
     background-color: rgb(190, 87, 87);
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     html, button {
-        font-size: 7px !important;
+        font-size: 10px !important;
     }
 }

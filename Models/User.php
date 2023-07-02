@@ -56,7 +56,4 @@ class User
         return $this->company['name'];
     }
 
-    //Add method
-
-    //Delete method
 }

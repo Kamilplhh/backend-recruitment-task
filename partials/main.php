@@ -1,9 +1,8 @@
 <?php
+require_once "UserController.php";
 
-require_once './App/Controllers/UserController.php';
-$UsersC = new UsersContoller();
+$UsersC = new UserContoller();
 $DataRows = $UsersC->GetData();
-
 
 echo '<table>
     <tr class="header">
@@ -16,7 +15,7 @@ echo '<table>
         <th></th>
     </tr>';
 
-foreach($DataRows as $row){
+foreach ($DataRows as $row) {
     echo "<tr>
         <th>" . $row->getName() . "</th>
         <th>" . $row->getUsername() . "</th>
@@ -24,11 +23,9 @@ foreach($DataRows as $row){
         <th>" . $row->getAddress() . "</th>
         <th>" . $row->getPhone() . "</th>
         <th>" . $row->getCompany() . "</th>
-        <th> <button value class='remove' =". $row->getId() .">Remove</button> </th>
+        <th> <button class='remove' value=" . $row->getId() . ">Remove</button> </th>
         </tr>";
 }
 echo '</table>';
 ?>
-<button>Previous page</button>
-<button>Next page</button>
 <button>Add</button>
